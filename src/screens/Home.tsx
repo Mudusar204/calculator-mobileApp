@@ -147,7 +147,10 @@ const Home = () => {
               setAnswer(''), onChangeText('');
             }}
             title={'AC'}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? '#42AEA0' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -155,7 +158,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={removeOne}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? '#42AEA0' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -164,7 +170,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton('%')}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? '#42AEA0' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -173,7 +182,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton('/')}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'red' : '#42AEA0'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -211,7 +223,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton('*')}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'red' : '#42AEA0'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -249,7 +264,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton('-')}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'red' : '#42AEA0'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -287,7 +305,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton('+')}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'red' : '#42AEA0'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -324,7 +345,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={result}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'red' : '#42AEA0'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
