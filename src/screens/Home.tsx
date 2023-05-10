@@ -10,7 +10,7 @@ import {
   Switch,
   //   KeyboardEventListener
 } from 'react-native';
-import KeyboardListener from 'react-native-keyboard-listener';
+// import KeyboardListener from 'react-native-keyboard-listener';
 import React, {useState, useRef, useEffect} from 'react';
 import CustomButton from '../components/button/Button';
 
@@ -26,10 +26,7 @@ const Home = () => {
     inputRef.current.focus();
     // Keyboard.dismiss();
   }, []);
-  //   useEffect(() => {
-  //     // inputRef.current.focus();
-  //     Keyboard.dismiss();
-  //   }, [isKeyboardOpen]);
+
   const onclickButton = (title: any) => {
     if (
       (text.charAt(cursorIndex - 1) == '+' ||
@@ -109,14 +106,6 @@ const Home = () => {
         />
       </View>
       <View style={styles.child1}>
-        <KeyboardListener
-          onWillShow={() => {
-            setIsKeyboardOpen(true);
-          }}
-          onWillHide={() => {
-            setIsKeyboardOpen(false);
-          }}
-        />
         <TextInput
           ref={inputRef}
           onFocus={() => {}}
@@ -196,7 +185,10 @@ const Home = () => {
         <View style={styles.buttonRows}>
           <CustomButton
             onPress={() => onclickButton(7)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -205,7 +197,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(8)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -214,7 +209,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(9)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -237,7 +235,10 @@ const Home = () => {
         <View style={styles.buttonRows}>
           <CustomButton
             onPress={() => onclickButton(4)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -246,7 +247,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(5)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -255,7 +259,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(6)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -278,7 +285,10 @@ const Home = () => {
         <View style={styles.buttonRows}>
           <CustomButton
             onPress={() => onclickButton(1)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -287,7 +297,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(2)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -296,7 +309,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(3)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -318,7 +334,10 @@ const Home = () => {
         </View>
         <View style={styles.buttonRows}>
           <CustomButton
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -327,7 +346,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton(0)}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
@@ -336,7 +358,10 @@ const Home = () => {
           />
           <CustomButton
             onPress={() => onclickButton('.')}
-            titleStyle={styles.titleStyles}
+            titleStyle={[
+              styles.titleStyles,
+              {color: isEnabled ? 'white' : 'black'},
+            ]}
             buttonStyle={[
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
