@@ -26,7 +26,35 @@ const Home = () => {
     inputRef.current.focus();
     // Keyboard.dismiss();
   }, []);
-
+  useEffect(() => {
+    if (
+      text.charAt(text.length - 1) != '-' &&
+      text.charAt(text.length - 1) != '+' &&
+      text.charAt(text.length - 1) != '.' &&
+      text.charAt(text.length - 1) != '/' &&
+      text.charAt(text.length - 1) != '*' &&
+      text.charAt(text.length - 1) != '%' &&
+      (text.includes('+') ||
+        text.includes('-') ||
+        text.includes('*') ||
+        text.includes('/') ||
+        text.includes('%'))
+    ) {
+      var result = eval(text);
+      setAnswer(result);
+      console.log(
+        text,
+        'this is text',
+        text.length,
+        'this is text lenght',
+        text.charAt(text.length - 1) != '+',
+        'this is last char',
+        text.includes('+'),
+      );
+    } else {
+      return;
+    }
+  }, [text]);
   const onclickButton = (title: any) => {
     if (
       (text.charAt(cursorIndex - 1) == '+' ||
@@ -57,7 +85,7 @@ const Home = () => {
         let finalDoc = newDoc.splice(cursorIndex, 0, title.toString());
         let Doc = newDoc.join('');
         onChangeText(Doc);
-        console.log(newDoc, 'textStirng', '');
+        // console.log(newDoc, 'textStirng', '');
       }
     }
   };
@@ -84,7 +112,8 @@ const Home = () => {
       return;
     } else {
       var result = eval(text);
-      setAnswer(result);
+      onChangeText(result.toString());
+      setAnswer('');
     }
   };
   return (
@@ -334,6 +363,7 @@ const Home = () => {
         </View>
         <View style={styles.buttonRows}>
           <CustomButton
+            onPress={() => onclickButton('00')}
             titleStyle={[
               styles.titleStyles,
               {color: isEnabled ? 'white' : 'black'},
@@ -342,7 +372,7 @@ const Home = () => {
               styles.button,
               {backgroundColor: isEnabled ? 'black' : 'lightblue'},
             ]}
-            title={'Del'}
+            title={'00'}
           />
           <CustomButton
             onPress={() => onclickButton(0)}
